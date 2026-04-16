@@ -1,3 +1,8 @@
+#include <cstddef>
+#include <mutex>
+#include <utility>
+#include <new>
+
 namespace memoryPool {
 const int MEMORY_POOL_NUM = 64;
 const int SLOT_BASE_SIZE = 8;
@@ -55,6 +60,7 @@ class HashBucket {
         if (!ptr)
             return;
         if (size > MAX_SLOT_SIZE) {
+            //不会调用析构函数
             operator delete(ptr);
             return;
         }
