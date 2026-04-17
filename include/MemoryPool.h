@@ -1,3 +1,6 @@
+#ifndef MEMORY_POOL_H
+#define MEMORY_POOL_H
+
 #include <cstddef>
 #include <mutex>
 #include <utility>
@@ -95,3 +98,5 @@ void deleteElement(T* p) {
     }
 }
 }
+
+#endif // MEMORY_POOL_H
